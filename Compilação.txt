@@ -1,0 +1,3 @@
+gcc -c fila.c
+gcc -c main.c
+gcc -o fila main.o fila.o
