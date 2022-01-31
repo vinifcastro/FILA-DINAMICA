@@ -60,13 +60,17 @@ void desenfileirar(Fila ** fila){
 
 void libera_fila(Fila ** fila){
     Fila * aux;
-    if (*fila == NULL) return;
+    if (*fila == NULL){
+        free(*fila);
+        return;
+    }
     aux = *fila;
     while((*fila)->proximo){
         *fila = (*fila)->proximo;
         free(aux);
         aux = *fila;
     }
+    aux = *fila;
     free(aux);
 }
 
